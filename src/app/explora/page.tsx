@@ -44,33 +44,33 @@ export default function ExploraPage() {
         <TopBar onOpenMobileMenu={() => setMobileSidebarOpen(true)} />
 
         {/* CONTENIDO INTERNO DASHBOARD */}
-        <main className="flex-1 p-4 md:p-6 lg:p-7 max-w-7xl mx-auto w-full flex flex-col gap-6">
+        <main className="flex-1 p-3 sm:p-5 md:p-6 lg:p-7 max-w-7xl mx-auto w-full flex flex-col gap-4 sm:gap-6">
           
           {/* GRID PRINCIPAL: ÁREA CENTRAL (MAPA) & PANEL LATERAL DERECHO */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-start">
             
             {/* ÁREA CENTRAL: MAPA INTERACTIVO */}
-            <div className="lg:col-span-8 flex flex-col">
+            <div className="lg:col-span-8 flex flex-col w-full">
               <MapExplorer />
             </div>
 
             {/* PANEL LATERAL DERECHO: CARD PROGRESO & CARD INSIGNIAS */}
-            <div className="lg:col-span-4 flex flex-col">
+            <div className="lg:col-span-4 flex flex-col w-full">
               <ProgressPanel />
             </div>
 
           </div>
 
           {/* FILA INFERIOR: WIDGETS (MISIONES DISPONIBLES & CATÁLOGO DE PLANTAS) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
             
             {/* Widget 1: Misiones Disponibles (Cantuta) */}
-            <div className="lg:col-span-6 flex flex-col">
+            <div className="lg:col-span-6 flex flex-col w-full">
               <MissionCard />
             </div>
 
             {/* Widget 2: Catálogo de Plantas (Quinual, Quishuar, Cantuta, Colli, Muña) */}
-            <div className="lg:col-span-6 flex flex-col">
+            <div className="lg:col-span-6 flex flex-col w-full">
               <PlantCatalog />
             </div>
 

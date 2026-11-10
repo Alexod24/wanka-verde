@@ -27,8 +27,8 @@ export const PlantCatalog: React.FC = () => {
         </span>
       </div>
 
-      {/* Grid of 5 Native Plants */}
-      <div className="grid grid-cols-5 gap-2 sm:gap-3">
+      {/* Grid of 5 Native Plants - Scroll horizontal fluido en móviles, grid en escritorio */}
+      <div className="flex sm:grid sm:grid-cols-5 gap-2.5 sm:gap-3 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
         {NATIVE_PLANTS.map((plant) => {
           const isDiscovered = stats.discoveredPlantIds.includes(plant.id);
 
@@ -36,10 +36,10 @@ export const PlantCatalog: React.FC = () => {
             <div
               key={plant.id}
               onClick={() => setSelectedPlant(plant)}
-              className="flex flex-col items-center group cursor-pointer relative"
+              className="flex flex-col items-center group cursor-pointer relative shrink-0 w-16 sm:w-auto"
             >
               {/* Plant Image with rounded square border */}
-              <div className={`w-full aspect-square rounded-2xl overflow-hidden border p-0.5 transition-all duration-200 group-hover:-translate-y-1 relative ${
+              <div className={`w-16 h-16 sm:w-full sm:aspect-square rounded-2xl overflow-hidden border p-0.5 transition-all duration-200 group-hover:-translate-y-1 relative ${
                 isDiscovered
                   ? "border-[#52A447] bg-[#E7F4E4]/40 ring-2 ring-[#52A447]/30 shadow-md"
                   : "border-[#E4E3D5] bg-[#FAF9F3] opacity-85 hover:opacity-100"
@@ -60,7 +60,7 @@ export const PlantCatalog: React.FC = () => {
               </div>
 
               {/* Plant Name */}
-              <span className={`text-[11px] sm:text-xs font-black font-heading mt-1.5 text-center truncate w-full transition-colors ${
+              <span className={`text-[10px] sm:text-xs font-black font-heading mt-1 sm:mt-1.5 text-center truncate w-full transition-colors ${
                 isDiscovered ? "text-[#3E7E36]" : "text-[#202B1D] group-hover:text-[#3E7E36]"
               }`}>
                 {plant.name}

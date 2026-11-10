@@ -169,38 +169,43 @@ export const Navbar: React.FC<NavbarProps> = ({ activeRoute = "inicio" }) => {
         {/* Mobile menu trigger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-xl text-[#202B1D] hover:bg-white border border-[#E4E3D5]"
+          className="lg:hidden p-2 rounded-xl text-[#202B1D] hover:bg-white border border-[#E4E3D5] active:scale-95 transition-transform"
+          aria-label="Menú principal"
         >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {/* Mobile nav drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden mt-3 pt-3 border-t border-[#E4E3D5] flex flex-col gap-2">
+        <div className="lg:hidden mt-3 pt-3 border-t border-[#E4E3D5] flex flex-col gap-2 animate-in slide-in-from-top-2 duration-150">
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[#2E6228] text-white font-bold font-heading text-sm"
+            className={`flex items-center gap-3 px-4 py-2.5 rounded-xl font-bold font-heading text-sm ${
+              activeRoute === "inicio" ? "bg-[#2E6228] text-white" : "text-[#202B1D] hover:bg-[#E7F4E4]"
+            }`}
           >
             <Sprout className="w-4 h-4" /> Inicio
           </Link>
           <Link
             href="/explora"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-[#202B1D] hover:bg-[#E7F4E4] font-bold font-heading text-sm"
+            className={`flex items-center gap-3 px-4 py-2.5 rounded-xl font-bold font-heading text-sm ${
+              activeRoute === "explora" ? "bg-[#2E6228] text-white" : "text-[#202B1D] hover:bg-[#E7F4E4]"
+            }`}
           >
             <Compass className="w-4 h-4 text-[#52A447]" /> Explora el Valle
           </Link>
           <Link
-            href="/explora"
+            href="/explora#juega"
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-[#202B1D] hover:bg-[#E7F4E4] font-bold font-heading text-sm"
           >
             <Gamepad2 className="w-4 h-4 text-[#865DFF]" /> Juega y Aprende
           </Link>
           <Link
-            href="/explora"
+            href="/explora#jardin"
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-[#202B1D] hover:bg-[#E7F4E4] font-bold font-heading text-sm"
           >

@@ -119,22 +119,22 @@ export const ProgressPanel: React.FC = () => {
         </div>
 
         {/* Cuadrícula de insignias según puntos conseguidos */}
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
           
           {/* Insignia 1: Hoja (Verde / Dorado) - Requiere 20 pts */}
           <div 
             className="flex flex-col items-center group cursor-pointer"
             title="Guardián de Hojas (requiere 20 pts)"
           >
-            <div className={`w-11 h-11 rounded-2xl p-1 shadow-sm transform group-hover:scale-110 transition-transform flex items-center justify-center ${
+            <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl p-1 shadow-sm transform group-hover:scale-110 transition-transform flex items-center justify-center ${
               points >= 20
                 ? "bg-gradient-to-br from-[#E7F4E4] to-[#c7eac0] border-2 border-[#52A447]"
                 : "bg-[#E2E8F0] border border-[#CBD5E1] opacity-60"
             }`}>
-              <div className={`w-full h-full rounded-xl flex items-center justify-center ${
+              <div className={`w-full h-full rounded-lg sm:rounded-xl flex items-center justify-center ${
                 points >= 20 ? "bg-[#3E7E36] text-white" : "bg-[#F1F5F9] text-stone-400"
               }`}>
-                {points >= 20 ? <Sprout className="w-4 h-4 text-white" /> : <Lock className="w-3.5 h-3.5" />}
+                {points >= 20 ? <Sprout className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" /> : <Lock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
               </div>
             </div>
           </div>
@@ -144,15 +144,15 @@ export const ProgressPanel: React.FC = () => {
             className="flex flex-col items-center group cursor-pointer"
             title="Protector de Bosques (requiere 50 pts)"
           >
-            <div className={`w-11 h-11 rounded-2xl p-1 shadow-sm transform group-hover:scale-110 transition-transform flex items-center justify-center ${
+            <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl p-1 shadow-sm transform group-hover:scale-110 transition-transform flex items-center justify-center ${
               points >= 50
                 ? "bg-gradient-to-br from-[#FEF3C7] to-[#FDE68A] border-2 border-[#E6A728]"
                 : "bg-[#E2E8F0] border border-[#CBD5E1] opacity-60"
             }`}>
-              <div className={`w-full h-full rounded-xl flex items-center justify-center ${
-                points >= 50 ? "bg-[#52A447] text-white text-xs" : "bg-[#F1F5F9] text-stone-400"
+              <div className={`w-full h-full rounded-lg sm:rounded-xl flex items-center justify-center ${
+                points >= 50 ? "bg-[#52A447] text-white text-[11px] sm:text-xs" : "bg-[#F1F5F9] text-stone-400"
               }`}>
-                {points >= 50 ? "🌲" : <Lock className="w-3.5 h-3.5" />}
+                {points >= 50 ? "🌲" : <Lock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
               </div>
             </div>
           </div>
@@ -162,15 +162,15 @@ export const ProgressPanel: React.FC = () => {
             className="flex flex-col items-center group cursor-pointer"
             title="Flor Sagrada Inca (requiere 120 pts)"
           >
-            <div className={`w-11 h-11 rounded-2xl p-1 shadow-sm transform group-hover:scale-110 transition-transform flex items-center justify-center ${
+            <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl p-1 shadow-sm transform group-hover:scale-110 transition-transform flex items-center justify-center ${
               points >= 120
                 ? "bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-[#865DFF]"
                 : "bg-[#E2E8F0] border border-[#CBD5E1] opacity-60"
             }`}>
-              <div className={`w-full h-full rounded-xl flex items-center justify-center ${
-                points >= 120 ? "bg-[#865DFF] text-white text-xs" : "bg-[#F1F5F9] text-stone-400"
+              <div className={`w-full h-full rounded-lg sm:rounded-xl flex items-center justify-center ${
+                points >= 120 ? "bg-[#865DFF] text-white text-[11px] sm:text-xs" : "bg-[#F1F5F9] text-stone-400"
               }`}>
-                {points >= 120 ? "🌸" : <Lock className="w-3.5 h-3.5" />}
+                {points >= 120 ? "🌸" : <Lock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
               </div>
             </div>
           </div>
@@ -180,15 +180,15 @@ export const ProgressPanel: React.FC = () => {
             className="flex flex-col items-center group cursor-pointer"
             title="Maestro Botánico Wanka (requiere 200 pts)"
           >
-            <div className={`w-11 h-11 rounded-2xl p-1 shadow-xs flex items-center justify-center ${
+            <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl p-1 shadow-xs flex items-center justify-center ${
               points >= 200
                 ? "bg-gradient-to-br from-amber-100 to-amber-200 border-2 border-[#E6A728]"
                 : "bg-[#E2E8F0] border border-[#CBD5E1] opacity-60"
             }`}>
-              <div className={`w-full h-full rounded-xl flex items-center justify-center ${
-                points >= 200 ? "bg-[#E6A728] text-white text-xs" : "bg-[#F1F5F9] text-stone-400"
+              <div className={`w-full h-full rounded-lg sm:rounded-xl flex items-center justify-center ${
+                points >= 200 ? "bg-[#E6A728] text-white text-[11px] sm:text-xs" : "bg-[#F1F5F9] text-stone-400"
               }`}>
-                {points >= 200 ? "🏆" : <Lock className="w-3.5 h-3.5" />}
+                {points >= 200 ? "🏆" : <Lock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
               </div>
             </div>
           </div>
