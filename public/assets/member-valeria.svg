@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <rect width="240" height="240" rx="48" fill="#EDE8F8"/>
+  <circle cx="120" cy="125" r="88" fill="#DDD6FE" opacity="0.7"/>
+  <!-- Long Back Hair -->
+  <rect x="64" y="68" width="112" height="125" rx="46" fill="#1E1B4B"/>
+  <!-- Shoulders / Sweater -->
+  <path d="M44 240C44 194 76 172 120 172C164 172 196 194 196 240H44Z" fill="#6D28D9"/>
+  <path d="M94 172L120 205L146 172" fill="#F4EFE0"/>
+  <!-- Neck -->
+  <rect x="104" y="144" width="32" height="36" rx="14" fill="#E0A587"/>
+  <!-- Head -->
+  <rect x="76" y="58" width="88" height="98" rx="44" fill="#EDB497"/>
+  <!-- Cheeks -->
+  <circle cx="94" cy="122" r="9" fill="#FB7185" opacity="0.35"/>
+  <circle cx="146" cy="122" r="9" fill="#FB7185" opacity="0.35"/>
+  <!-- Glasses & Eyes -->
+  <circle cx="101" cy="108" r="13" stroke="#18181A" stroke-width="3.5" fill="white" fill-opacity="0.25"/>
+  <circle cx="139" cy="108" r="13" stroke="#18181A" stroke-width="3.5" fill="white" fill-opacity="0.25"/>
+  <line x1="114" y1="108" x2="126" y2="108" stroke="#18181A" stroke-width="3.5"/>
+  <circle cx="101" cy="108" r="5" fill="#18181A"/>
+  <circle cx="139" cy="108" r="5" fill="#18181A"/>
+  <circle cx="103" cy="106" r="1.8" fill="white"/>
+  <circle cx="141" cy="106" r="1.8" fill="white"/>
+  <!-- Smile -->
+  <path d="M108 131C114 138 126 138 132 131" stroke="#18181A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Front Bangs -->
+  <path d="M72 96C72 60 94 46 120 46C146 46 168 60 168 96C155 78 138 72 120 72C102 72 85 78 72 96Z" fill="#1E1B4B"/>
+  <!-- Cantuta Flower Hairpin -->
+  <circle cx="158" cy="78" r="9" fill="#F43F5E"/>
+  <circle cx="158" cy="78" r="3.5" fill="#FDE047"/>
+</svg>

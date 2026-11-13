@@ -1,35 +1,53 @@
-# Adopta una Planta 🌱 (Wanka Verde - Huancayo)
+# Wanka-Tuta 🌱
 
-Plataforma web de educación ambiental gamificada y conservación de flora nativa para la ciudad de Huancayo y el Valle del Mantaro, Perú.
+Plataforma web de educación ambiental gamificada, ciencia ciudadana y conservación de flora andina nativa para Huancayo y el Valle del Mantaro, Perú.
 
-Desarrollada con **Next.js (App Router)**, **TypeScript**, **Tailwind CSS** y **Leaflet** con capas de **Google Maps Satelital**.
+Desarrollada con **Next.js (App Router)**, **TypeScript**, **Tailwind CSS** y **Leaflet** con capas de **Google Maps Satelital/Híbrido**.
+
+---
+
+## 🔐 Credenciales de Acceso (Modo Demostración)
+
+La aplicación incluye un sistema de autenticación en `/login` para proteger el panel interactivo y permitir explicar la arquitectura de cuentas personales:
+
+| Campo | Valor Demo |
+|---|---|
+| **Correo Electrónico** | `geraldine@wankatuta.edu.pe` |
+| **Contraseña** | `wanka` |
+| **Código de Verificación Botánica** | `WANKA-TUTA` |
+
+> En la pantalla de inicio de sesión dispones de un botón rápido **"Usar credenciales de prueba"** para autocompletar con un solo clic.
 
 ---
 
 ## 🌟 Características Principales
 
-### 1. Landing Page (`/`)
-- **Navbar Institucional:** Navegación modular con brote verde, menú de usuario con avatar, nivel y puntos.
-- **Hero Section:** Imagen panorámica del Valle del Mantaro, titular de alto impacto y llamado a la acción (`Comenzar mi aventura ▶`).
-- **Retos y Misiones:**
-  - Card 1: Contexto sobre la pérdida de especies nativas en Huancayo y foto botánica.
-  - Card 2: Microtarjetas interactivas de misiones (Encuentra plantas, Cuestionarios, Siembra y Escaneo QR) con confeti gamificado.
-  - Card 3: Progreso de nivel (`Explorador Verde`), barra de puntuación e insignias de guardián ambiental.
-- **Footer Orgánico:** Banner curvo con mensaje de compromiso comunitario.
+### 1. Sistema de Autenticación y Cuentas (`/login`)
+- Protección de rutas: El acceso a `/explora` requiere sesión activa, redirigiendo al login si el usuario no ha ingresado.
+- Perfil personalizado de exploradora ambiental con nivel, puntuación e insignias guardadas en sesión.
+- Opción de cerrar sesión y reiniciar progresos desde el menú de usuario.
 
-### 2. Dashboard & Mapa de Exploración (`/explora`)
-- **Sidebar Fijo:** Enlaces activos a `Inicio`, `Explora`, `Juega`, `Mis Logros`, `Mi Jardín` y `Docentes`.
-- **Top Bar:** Notificaciones de eventos botánicos en Huancayo y pill de progreso de usuario.
+### 2. Landing Page Institucional (`/`)
+- **Identidad Wanka-Tuta:** Diseño editorial y orgánico inspirado en la flora altoandina (Quinual, Cantuta, Muña).
+- **Hero Section:** Presentación del reto de conservación en Huancayo y CTA directo a la exploración.
+- **Misiones y Retos:** Módulos de aprendizaje sobre pérdida de cobertura vegetal y dinámicas de conservación comunitaria.
+
+### 3. Dashboard & Mapa Interactivo (`/explora`)
+- **Puntuación y Estadísticas desde Cero (0):** El usuario inicia en Nivel 1 con 0 puntos; debe verificar sus actividades para sumar puntaje real.
 - **Mapa Satelital con Google Maps:**
-  - Vista aérea satelital real centrada en Huancayo (`lat: -12.0651, lng: -75.2049`).
+  - Vista satelital e híbrida de alta resolución centrada en Huancayo (`lat: -12.0651, lng: -75.2049`).
   - Capas intercambiables: **Híbrido**, **Satélite** y **Calles**.
   - Puntos geolocalizados de especies nativas (Cerrito de la Libertad, Torre Torre, Parque de la Identidad Wanka, Quebrada de Palián, San Carlos y Plaza Constitución).
-  - **Función "+ Registrar Planta":** Permite al usuario hacer clic en cualquier punto del mapa para plantar un nuevo marcador y registrar observaciones de campo.
-  - Modales flotantes con ficha botánica detallada de cada especie.
-- **Panel de Progresos:** Anillo circular SVG animado (`Nivel 2`), contador de plantas conocidas y cuadrícula de insignias desbloqueadas.
-- **Widgets Inferiores:**
-  - Misión activa de la flor *Cantuta* con simulador de escáner QR.
-  - Catálogo interactivo de 5 especies nativas del Valle del Mantaro (*Quinual*, *Quishuar*, *Cantuta*, *Colli*, *Muña*).
+  - Marcador y botón **"+ Registrar Planta"** para ciencia ciudadana comunitaria.
+- **Sistema de Verificación Multimodal (Z-Index corregido):**
+  - Validación con código botánico oficial: `WANKA-TUTA`.
+  - Simulador de lector QR botánico en campo.
+  - Cuestionario de validación botánica en sitio.
+  - Carga simulada de fotografía de evidencia.
+- **Catálogo de Especies Nativas:**
+  - 5 especies representativas: *Quinual*, *Quishuar*, *Cantuta*, *Colli* y *Muña*.
+  - Fichas científicas completas con nombres quechuas, usos medicinales y ecológicos.
+- **Diseño 100% Responsivo:** Adaptado para teléfonos móviles, tablets y pantallas de escritorio.
 
 ---
 
@@ -44,7 +62,14 @@ pnpm dev
 
 Abre en tu navegador:
 - **Landing Page:** [http://localhost:3000](http://localhost:3000)
-- **Mapa de Exploración:** [http://localhost:3000/explora](http://localhost:3000/explora)
+- **Login:** [http://localhost:3000/login](http://localhost:3000/login)
+- **Explorador:** [http://localhost:3000/explora](http://localhost:3000/explora)
+
+Para compilar para producción:
+
+```bash
+pnpm run build
+```
 
 ---
 
@@ -52,7 +77,7 @@ Abre en tu navegador:
 
 - **Framework:** Next.js 16 (App Router)
 - **Lenguaje:** TypeScript
-- **Estilos:** Tailwind CSS
+- **Estilos:** Tailwind CSS con PostCSS
 - **Mapas:** Leaflet con Tiles de Google Maps (Híbrido/Satelital)
 - **Iconografía:** Lucide React
 - **Microinteracciones:** Canvas Confetti

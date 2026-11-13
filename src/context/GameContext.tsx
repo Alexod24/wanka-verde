@@ -3,6 +3,27 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import confetti from "canvas-confetti";
 
+export interface UserAccount {
+  name: string;
+  email: string;
+  school: string;
+  city: string;
+  avatarUrl: string;
+}
+
+export const DEFAULT_CREDENTIALS = {
+  email: "geraldine@biowanka.edu.pe",
+  password: "wanka",
+};
+
+export const DEFAULT_USER: UserAccount = {
+  name: "Geraldine Huamán",
+  email: "geraldine@biowanka.edu.pe",
+  school: "Colegio Santa Isabel - Huancayo",
+  city: "Huancayo, Junín",
+  avatarUrl: "/assets/avatar-geraldine.png",
+};
+
 export interface CompletedObjective {
   id: string;
   name: string;
@@ -24,6 +45,13 @@ export interface UserStats {
 }
 
 interface GameContextType {
+  // Auth state
+  isAuthenticated: boolean;
+  currentUser: UserAccount | null;
+  login: (email: string, pass: string) => { success: boolean; error?: string };
+  logout: () => void;
+
+  // Gamification state
   stats: UserStats;
   verifyAndCompleteObjective: (
     objectiveId: string,
@@ -50,11 +78,33 @@ const INITIAL_STATS: UserStats = {
 const GameContext = createContext<GameContextType | undefined>(undefined);
 
 export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Lazy state initialization to read from localStorage without setState inside useEffect
+  // Auth State
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("biowanka_auth") === "true";
+    }
+    return false;
+  });
+
+  const [currentUser, setCurrentUser] = useState<UserAccount | null>(() => {
+    if (typeof window !== "undefined") {
+      const savedUser = localStorage.getItem("biowanka_user");
+      if (savedUser) {
+        try {
+          return JSON.parse(savedUser);
+        } catch {
+          // ignore
+        }
+      }
+    }
+    return DEFAULT_USER;
+  });
+
+  // Game Stats
   const [stats, setStats] = useState<UserStats>(() => {
     if (typeof window !== "undefined") {
       try {
-        const saved = localStorage.getItem("wanka_verde_stats");
+        const saved = localStorage.getItem("biowanka_stats");
         if (saved) {
           return JSON.parse(saved);
         }
@@ -65,14 +115,43 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return INITIAL_STATS;
   });
 
-  // Sync to localStorage when stats update
   useEffect(() => {
     try {
-      localStorage.setItem("wanka_verde_stats", JSON.stringify(stats));
+      localStorage.setItem("biowanka_stats", JSON.stringify(stats));
     } catch {
       // ignore
     }
   }, [stats]);
+
+  const login = (email: string, pass: string): { success: boolean; error?: string } => {
+    const cleanEmail = email.trim().toLowerCase();
+    const cleanPass = pass.trim();
+
+    if (
+      cleanEmail === DEFAULT_CREDENTIALS.email.toLowerCase() &&
+      cleanPass === DEFAULT_CREDENTIALS.password
+    ) {
+      setIsAuthenticated(true);
+      setCurrentUser(DEFAULT_USER);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("biowanka_auth", "true");
+        localStorage.setItem("biowanka_user", JSON.stringify(DEFAULT_USER));
+      }
+      return { success: true };
+    }
+
+    return {
+      success: false,
+      error: "Credenciales incorrectas. Revisa el correo o la contraseña de prueba.",
+    };
+  };
+
+  const logout = () => {
+    setIsAuthenticated(false);
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("biowanka_auth");
+    }
+  };
 
   const calculateLevel = (points: number): { level: number; name: string } => {
     if (points >= 200) return { level: 4, name: "Maestro Guardián Wanka" };
@@ -145,6 +224,10 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   return (
     <GameContext.Provider
       value={{
+        isAuthenticated,
+        currentUser,
+        login,
+        logout,
         stats,
         verifyAndCompleteObjective,
         isObjectiveCompleted,

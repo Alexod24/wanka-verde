@@ -161,7 +161,7 @@ export const PlantCatalog: React.FC = () => {
             title: `Avistamiento de ${verifyingPlant.name}`,
             description: verifyingPlant.description,
             points: verifyingPlant.pointsReward || 25,
-            expectedCode: "WANKA-TUTA",
+            expectedCode: "BIOWANKA",
             plantId: verifyingPlant.id,
             question: {
               q: `¿Qué rol ecológico o característico tiene ${verifyingPlant.name} en el Valle del Mantaro?`,

@@ -441,56 +441,53 @@ export const MapExplorer: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[360px] sm:h-[440px] md:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E4E3D5] shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-[#1c271b] z-0">
+    <div id="mapa-exploracion" className="relative w-full h-[360px] sm:h-[400px] md:h-[420px] rounded-3xl overflow-hidden border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-[#EBF3FF] z-0">
 
       {/* Contenedor del Mapa Leaflet */}
       <div ref={mapContainerRef} className="w-full h-full z-0" />
 
-      {/* TOP-LEFT PILL: "Mapa de Exploración" */}
-      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 flex items-center gap-2 sm:gap-2.5 bg-[#2E6228]/95 backdrop-blur-md text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl border border-[#52A447]/40 shadow-lg select-none">
-        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-[#52A447]/40 flex items-center justify-center">
-          <MapPinIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A7F3D0]" />
+      {/* TOP-LEFT PILL: Estilo Card limpia de la referencia */}
+      <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-20 flex items-center gap-2.5 bg-white/95 backdrop-blur-md text-[#18181A] px-3.5 py-2 rounded-2xl border border-slate-200/80 shadow-md select-none">
+        <div className="w-7 h-7 rounded-xl bg-[#EAF2FF] flex items-center justify-center">
+          <MapPinIcon className="w-4 h-4 text-[#2563EB]" />
         </div>
         <div className="flex flex-col">
-          <span className="font-extrabold font-heading text-[11px] sm:text-xs md:text-sm tracking-wide leading-tight">
-            Mapa de Exploración
+          <span className="font-extrabold font-heading text-xs sm:text-sm tracking-tight leading-tight text-[#18181A]">
+            Huancayo · Valle del Mantaro
           </span>
-          <span className="text-[9px] sm:text-[10px] text-emerald-200 font-semibold leading-tight hidden xs:inline">
-            Huancayo · Google Satelital
+          <span className="text-[10px] text-slate-500 font-semibold leading-tight hidden xs:inline">
+            Exploración satelital en vivo
           </span>
         </div>
       </div>
 
       {/* TOP-RIGHT CONTROLS: Capas & Brújula */}
-      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 flex items-center gap-1.5 sm:gap-2">
-        <div className="bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl border border-[#E4E3D5] shadow-lg p-0.5 sm:p-1 flex items-center gap-0.5 sm:gap-1">
+      <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-20 flex items-center gap-1.5 sm:gap-2">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-md p-1 flex items-center gap-0.5 sm:gap-1">
           <button
             onClick={() => setMapType("google_hybrid")}
-            className={`px-2 sm:px-2.5 py-1 rounded-lg sm:rounded-xl text-[10px] sm:text-[11px] font-black font-heading transition-all ${
-              mapType === "google_hybrid"
-                ? "bg-[#3E7E36] text-white shadow-xs"
-                : "text-[#5C6856] hover:text-[#202B1D] hover:bg-[#FAF9F3]"
-            }`}
+            className={`px-2.5 py-1 rounded-xl text-[10px] sm:text-[11px] font-black font-heading transition-all ${mapType === "google_hybrid"
+                ? "bg-[#18181A] text-white shadow-xs"
+                : "text-slate-500 hover:text-[#18181A] hover:bg-slate-100"
+              }`}
           >
             Híbrido
           </button>
           <button
             onClick={() => setMapType("google_sat")}
-            className={`px-2 sm:px-2.5 py-1 rounded-lg sm:rounded-xl text-[10px] sm:text-[11px] font-black font-heading transition-all ${
-              mapType === "google_sat"
-                ? "bg-[#3E7E36] text-white shadow-xs"
-                : "text-[#5C6856] hover:text-[#202B1D] hover:bg-[#FAF9F3]"
-            }`}
+            className={`px-2.5 py-1 rounded-xl text-[10px] sm:text-[11px] font-black font-heading transition-all ${mapType === "google_sat"
+                ? "bg-[#18181A] text-white shadow-xs"
+                : "text-slate-500 hover:text-[#18181A] hover:bg-slate-100"
+              }`}
           >
             Satélite
           </button>
           <button
             onClick={() => setMapType("google_streets")}
-            className={`hidden sm:inline-block px-2 sm:px-2.5 py-1 rounded-lg sm:rounded-xl text-[10px] sm:text-[11px] font-black font-heading transition-all ${
-              mapType === "google_streets"
-                ? "bg-[#3E7E36] text-white shadow-xs"
-                : "text-[#5C6856] hover:text-[#202B1D] hover:bg-[#FAF9F3]"
-            }`}
+            className={`hidden sm:inline-block px-2.5 py-1 rounded-xl text-[10px] sm:text-[11px] font-black font-heading transition-all ${mapType === "google_streets"
+                ? "bg-[#18181A] text-white shadow-xs"
+                : "text-slate-500 hover:text-[#18181A] hover:bg-slate-100"
+              }`}
           >
             Calles
           </button>
@@ -499,37 +496,37 @@ export const MapExplorer: React.FC = () => {
         <button
           onClick={handleCenterHuancayo}
           title="Centrar en Huancayo"
-          className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md hover:bg-white text-[#202B1D] flex items-center justify-center shadow-lg border border-[#E4E3D5] transition-transform active:rotate-45"
+          className="w-9 h-9 rounded-2xl bg-white/95 backdrop-blur-md hover:bg-white text-[#18181A] flex items-center justify-center shadow-md border border-slate-200/80 transition-transform active:rotate-45"
         >
-          <Navigation className="w-4 h-4 sm:w-5 sm:h-5 text-[#3E7E36] transform -rotate-45" />
+          <Navigation className="w-4 h-4 text-[#18181A] transform -rotate-45" />
         </button>
       </div>
 
       {/* LEFT CONTROLS: Zoom */}
-      <div className="absolute top-16 sm:top-20 left-3 sm:left-4 z-20 flex flex-col gap-2">
-        <div className="flex flex-col gap-0.5 sm:gap-1 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl border border-[#E4E3D5] shadow-lg p-0.5 sm:p-1">
+      <div className="absolute top-18 sm:top-20 left-3.5 sm:left-4 z-20 flex flex-col gap-2">
+        <div className="flex flex-col gap-0.5 bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-md p-1">
           <button
             onClick={handleZoomIn}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl hover:bg-[#FAF9F3] text-[#202B1D] font-black flex items-center justify-center text-base sm:text-lg active:scale-90 transition-transform"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl hover:bg-slate-100 text-[#18181A] font-black flex items-center justify-center text-base active:scale-90 transition-transform"
             aria-label="Acercar mapa"
           >
-            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <Plus className="w-4 h-4" />
           </button>
-          <div className="h-[1px] bg-[#E4E3D5] mx-1" />
+          <div className="h-[1px] bg-slate-200 mx-1" />
           <button
             onClick={handleZoomOut}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl hover:bg-[#FAF9F3] text-[#202B1D] font-black flex items-center justify-center text-base sm:text-lg active:scale-90 transition-transform"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl hover:bg-slate-100 text-[#18181A] font-black flex items-center justify-center text-base active:scale-90 transition-transform"
             aria-label="Alejar mapa"
           >
-            <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <Minus className="w-4 h-4" />
           </button>
         </div>
       </div>
 
-      {/* BANNER INFERIOR */}
-      <div className="absolute bottom-2.5 left-3 sm:bottom-3 sm:left-4 z-20 bg-black/75 backdrop-blur-xs text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl sm:rounded-2xl flex items-center gap-1.5 sm:gap-2 pointer-events-none select-none max-w-[85%] truncate">
-        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#52A447] shrink-0" />
-        <span className="truncate">{MARKERS_DATA.length + userCreatedPins.length} objetivos botánicos</span>
+      {/* BANNER INFERIOR ESTILO TOOLTIP NEGRO (#18181A) */}
+      <div className="absolute bottom-3 left-3.5 sm:bottom-3.5 sm:left-4 z-20 bg-[#18181A] text-white text-[11px] font-extrabold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-2 pointer-events-none select-none max-w-[85%] truncate">
+        <span className="w-2 h-2 rounded-full bg-[#4ADE80] shrink-0" />
+        <span className="truncate">{MARKERS_DATA.length + userCreatedPins.length} objetivos botánicos activos</span>
       </div>
 
       {/* FORMULARIO: REGISTRAR PLANTA */}
@@ -661,8 +658,8 @@ export const MapExplorer: React.FC = () => {
               <button
                 onClick={() => handleStartVerification(selectedMarker)}
                 className={`px-4 py-2 rounded-xl text-xs font-black font-heading shadow-xs flex items-center gap-1.5 transition-all active:scale-95 ${isObjectiveCompleted(selectedMarker.id)
-                    ? "bg-[#E7F4E4] text-[#3E7E36] cursor-default"
-                    : "bg-[#3E7E36] hover:bg-[#2E6228] text-white"
+                  ? "bg-[#E7F4E4] text-[#3E7E36] cursor-default"
+                  : "bg-[#3E7E36] hover:bg-[#2E6228] text-white"
                   }`}
               >
                 {isObjectiveCompleted(selectedMarker.id) ? (

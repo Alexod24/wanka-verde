@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <rect width="240" height="240" rx="48" fill="#DFF5E3"/>
+  <circle cx="120" cy="125" r="88" fill="#BBF7D0" opacity="0.65"/>
+  <!-- Jacket -->
+  <path d="M42 240C42 192 75 170 120 170C165 170 198 192 198 240H42Z" fill="#18181A"/>
+  <path d="M88 170L120 218L152 170" fill="#4ADE80"/>
+  <!-- Neck -->
+  <rect x="102" y="142" width="36" height="38" rx="16" fill="#C98A67"/>
+  <!-- Ears -->
+  <circle cx="72" cy="112" r="11" fill="#C98A67"/>
+  <circle cx="168" cy="112" r="11" fill="#C98A67"/>
+  <!-- Head -->
+  <rect x="74" y="56" width="92" height="100" rx="45" fill="#D99B78"/>
+  <!-- Eyes -->
+  <circle cx="101" cy="107" r="5.5" fill="#18181A"/>
+  <circle cx="139" cy="107" r="5.5" fill="#18181A"/>
+  <circle cx="103" cy="105" r="2" fill="white"/>
+  <circle cx="141" cy="105" r="2" fill="white"/>
+  <!-- Smile -->
+  <path d="M105 129C113 137 127 137 135 129" stroke="#18181A" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Curly Hair -->
+  <circle cx="95" cy="58" r="18" fill="#18181A"/>
+  <circle cx="120" cy="52" r="20" fill="#18181A"/>
+  <circle cx="145" cy="58" r="18" fill="#18181A"/>
+  <circle cx="78" cy="72" r="14" fill="#18181A"/>
+  <circle cx="162" cy="72" r="14" fill="#18181A"/>
+</svg>

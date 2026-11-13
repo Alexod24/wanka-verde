@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <rect width="240" height="240" rx="48" fill="#FCE7F3"/>
+  <circle cx="120" cy="125" r="88" fill="#FBCFE8" opacity="0.65"/>
+  <!-- Hair Buns -->
+  <circle cx="68" cy="74" r="22" fill="#27272A"/>
+  <circle cx="172" cy="74" r="22" fill="#27272A"/>
+  <!-- Jacket -->
+  <path d="M44 240C44 194 76 172 120 172C164 172 196 194 196 240H44Z" fill="#BE185D"/>
+  <path d="M92 172L120 206L148 172" fill="#FFF1F2"/>
+  <!-- Neck -->
+  <rect x="104" y="142" width="32" height="36" rx="14" fill="#DC9E7B"/>
+  <!-- Head -->
+  <rect x="76" y="58" width="88" height="98" rx="44" fill="#EAB08E"/>
+  <!-- Cheeks -->
+  <circle cx="94" cy="120" r="10" fill="#F43F5E" opacity="0.3"/>
+  <circle cx="146" cy="120" r="10" fill="#F43F5E" opacity="0.3"/>
+  <!-- Eyes -->
+  <circle cx="101" cy="107" r="6" fill="#18181A"/>
+  <circle cx="139" cy="107" r="6" fill="#18181A"/>
+  <circle cx="103" cy="105" r="2" fill="white"/>
+  <circle cx="141" cy="105" r="2" fill="white"/>
+  <!-- Smile -->
+  <path d="M107 129C113 137 127 137 133 129" stroke="#18181A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Hair Front -->
+  <path d="M74 92C74 58 94 46 120 46C146 46 166 58 166 92C152 74 136 68 120 68C104 68 88 74 74 92Z" fill="#27272A"/>
+</svg>

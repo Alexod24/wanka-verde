@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <rect width="240" height="240" rx="48" fill="#E0F2FE"/>
+  <circle cx="120" cy="125" r="88" fill="#BAE6FD" opacity="0.65"/>
+  <!-- Coat -->
+  <path d="M40 240C40 190 74 168 120 168C166 168 200 190 200 240H40Z" fill="#0F172A"/>
+  <path d="M94 168L120 220L146 168" fill="#F8FAFC"/>
+  <path d="M114 176L120 230L126 176" fill="#0284C7"/>
+  <!-- Neck -->
+  <rect x="102" y="140" width="36" height="38" rx="16" fill="#D59773"/>
+  <!-- Head -->
+  <rect x="74" y="54" width="92" height="102" rx="44" fill="#E2A683"/>
+  <!-- Glasses -->
+  <rect x="86" y="96" width="28" height="20" rx="6" stroke="#1E293B" stroke-width="4" fill="white" fill-opacity="0.3"/>
+  <rect x="126" y="96" width="28" height="20" rx="6" stroke="#1E293B" stroke-width="4" fill="white" fill-opacity="0.3"/>
+  <line x1="114" y1="105" x2="126" y2="105" stroke="#1E293B" stroke-width="4"/>
+  <circle cx="100" cy="106" r="4.5" fill="#0F172A"/>
+  <circle cx="140" cy="106" r="4.5" fill="#0F172A"/>
+  <!-- Friendly Beard / Mustache -->
+  <path d="M102 126C110 122 130 122 138 126" stroke="#334155" stroke-width="5" stroke-linecap="round"/>
+  <path d="M108 133C114 139 126 139 132 133" stroke="#0F172A" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Hair with silver temples -->
+  <path d="M72 88C72 54 94 42 120 42C146 42 168 54 168 88C156 72 140 66 120 66C100 66 84 72 72 88Z" fill="#334155"/>
+</svg>

@@ -73,6 +73,8 @@ export const VerificationModal: React.FC<VerificationModalProps> = ({
   // 2. Code Verification (Placa botánica)
   const handleVerifyCode = () => {
     const validCodes = [
+      "BIOWANKA",
+      "BIO-WANKA",
       "WANKA-TUTA",
       "WANKA-CANTUTA-01",
       "WANKA-QUINUAL-02",
@@ -81,7 +83,7 @@ export const VerificationModal: React.FC<VerificationModalProps> = ({
       "WANKA-MUNA-05",
       "WANKA-RETO-2026",
       "HUANCAYO-VERDE",
-      objective.expectedCode?.toUpperCase() || "WANKA-TUTA",
+      objective.expectedCode?.toUpperCase() || "BIOWANKA",
     ];
 
     if (!inputCode.trim()) {
@@ -101,7 +103,7 @@ export const VerificationModal: React.FC<VerificationModalProps> = ({
         }, 1000);
       }, 900);
     } else {
-      setCodeError("Código inválido. Revisa la placa física o prueba 'WANKA-TUTA'.");
+      setCodeError("Código inválido. Revisa la placa física o prueba 'BIOWANKA'.");
     }
   };
 
@@ -267,13 +269,13 @@ export const VerificationModal: React.FC<VerificationModalProps> = ({
                 </label>
                 <input
                   type="text"
-                  placeholder="Ej. WANKA-TUTA"
+                  placeholder="Ej. BIOWANKA"
                   value={inputCode}
                   onChange={(e) => setInputCode(e.target.value)}
                   className="w-full uppercase tracking-wider text-xs px-3.5 py-2.5 rounded-xl border border-[#E4E3D5] bg-[#FAF9F3] focus:outline-none focus:ring-2 focus:ring-[#3E7E36] font-mono mb-2"
                 />
                 <p className="text-[10px] text-[#5C6856] mb-3">
-                  (Código de prueba: <code>WANKA-TUTA</code>).
+                  (Código de prueba: <code>BIOWANKA</code> o <code>WANKA-TUTA</code>).
                 </p>
 
                 {codeError && (

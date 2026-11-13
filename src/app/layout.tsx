@@ -4,8 +4,8 @@ import "leaflet/dist/leaflet.css";
 import { GameProvider } from "@/context/GameContext";
 
 export const metadata: Metadata = {
-  title: "Wanka-Tuta | Educación Ambiental - Huancayo",
-  description: "Educación ambiental gamificada y conservación de flora nativa para la ciudad de Huancayo, Valle del Mantaro, Perú.",
+  title: "BioWanka | Educación Ambiental y Ciencia Ciudadana - Huancayo",
+  description: "Plataforma de ciencia ciudadana, educación ambiental gamificada y conservación de flora nativa para la ciudad de Huancayo y el Valle del Mantaro, Perú.",
   icons: {
     icon: "/assets/mascot.png",
   },

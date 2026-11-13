@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <rect width="240" height="240" rx="48" fill="#F8F2DC"/>
+  <circle cx="120" cy="125" r="88" fill="#FDE68A" opacity="0.6"/>
+  <!-- Shoulders / Explorer Jacket -->
+  <path d="M42 240C42 192 74 170 120 170C166 170 198 192 198 240H42Z" fill="#1D5B34"/>
+  <path d="M92 170L120 212L148 170" fill="#F4EFE0"/>
+  <path d="M105 172L120 240L135 172" fill="#B45309"/>
+  <!-- Neck -->
+  <rect x="102" y="142" width="36" height="38" rx="16" fill="#D99B78"/>
+  <!-- Ears -->
+  <circle cx="72" cy="112" r="12" fill="#D99B78"/>
+  <circle cx="168" cy="112" r="12" fill="#D99B78"/>
+  <!-- Head -->
+  <rect x="74" y="56" width="92" height="102" rx="44" fill="#E6A987"/>
+  <!-- Cheeks -->
+  <circle cx="92" cy="122" r="9" fill="#F472B6" opacity="0.28"/>
+  <circle cx="148" cy="122" r="9" fill="#F472B6" opacity="0.28"/>
+  <!-- Eyes -->
+  <circle cx="100" cy="106" r="6" fill="#18181A"/>
+  <circle cx="140" cy="106" r="6" fill="#18181A"/>
+  <circle cx="102" cy="104" r="2" fill="white"/>
+  <circle cx="142" cy="104" r="2" fill="white"/>
+  <!-- Eyebrows -->
+  <path d="M90 94C95 90 105 90 108 94" stroke="#27272A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M132 94C135 90 145 90 150 94" stroke="#27272A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Smile -->
+  <path d="M106 128C112 136 128 136 134 128" stroke="#18181A" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Hair & Explorer Hat -->
+  <path d="M68 92C68 58 92 44 120 44C148 44 172 58 172 92C162 74 142 68 120 68C98 68 78 74 68 92Z" fill="#1F2937"/>
+  <!-- Botanical Badge -->
+  <circle cx="152" cy="204" r="10" fill="#4ADE80"/>
+</svg>
